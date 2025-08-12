@@ -1,0 +1,23 @@
+{
+  "title": "Siemens IX Explorer - Card Carousel Demo",
+  "description": "Demonstração de um carrossel de cards interativo usando Siemens IX Design System com Angular 18",
+  "template": "angular-cli",
+  "tags": ["angular", "siemens-ix", "design-system", "carousel", "cards", "bem-methodology"],
+  "dependencies": {
+    "@angular/animations": "^18.2.13",
+    "@angular/common": "^18.2.13",
+    "@angular/compiler": "^18.2.13",
+    "@angular/core": "^18.2.13",
+    "@angular/forms": "^18.2.13",
+    "@angular/platform-browser": "^18.2.13",
+    "@angular/platform-browser-dynamic": "^18.2.13",
+    "@angular/router": "^18.2.13",
+    "@siemens/ix": "^3.2.0",
+    "@siemens/ix-angular": "^3.2.0",
+    "@siemens/ix-icons": "^3.1.1",
+    "@stencil/core": "^4.36.2",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.14.3"
+  }
+}

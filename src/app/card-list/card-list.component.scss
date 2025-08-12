@@ -1,0 +1,265 @@
+// ==========================================
+// CARD LIST COMPONENT - BEM METHODOLOGY
+// ==========================================
+
+// Block: card-list
+.card-list {
+  width: 100%;
+  max-width: 100%;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+
+  // Element: header
+  &__header {
+    margin-bottom: 8px;
+  }
+
+  // Element: title
+  &__title {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--theme-color-text);
+    text-align: left;
+  }
+
+  // Element: carousel
+  &__carousel {
+    position: relative;
+    width: 800px;
+  }
+
+  // Element: nav (navigation buttons)
+  &__nav {
+    position: absolute;
+    top: 120px;
+    transform: translateY(-75%);
+    z-index: 10;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: #ffffffba;
+    border: 2px solid #007993;
+    color: #007993;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    font-size: 24px;
+    font-weight: bold;
+
+    // Modifier: left
+    &--left {
+      left: 4px;
+    }
+
+    // Modifier: right
+    &--right {
+      right: 16px;
+    }
+
+    // States
+    &:hover:not(:disabled) {
+      background: var(--theme-color-primary);
+      color: var(--theme-color-std-bkg);
+      transform: translateY(-75%) scale(1.1);
+      box-shadow: 0 6px 20px rgba(var(--theme-color-primary--rgb), 0.4);
+      border-color: var(--theme-color-primary);
+    }
+
+    &:disabled {
+      opacity: 0;
+      cursor: not-allowed;
+      border-color: var(--theme-color-component-3);
+      color: var(--theme-color-component-3);
+      transform: translateY(-75%) scale(0.95);
+      box-shadow: none;
+    }
+  }
+
+  // Element: viewport
+  &__viewport {
+    width: 800px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    position: relative;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0;
+
+    // Hide scrollbar
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  // Element: container
+  &__container {
+    display: flex;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    flex-wrap: nowrap;
+  }
+}
+
+// Block: card
+.card {
+  position: relative;
+  overflow: hidden;
+  flex: 0 0 auto;
+  min-width: 280px;
+  width: 300px;
+  height: 200px;
+  cursor: pointer;
+  border: 1px solid var(--theme-color-primary) !important;
+  border-radius: 8px !important;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+
+  // Element: content
+  &__content {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+  }
+
+  // Element: thumbnail
+  &__thumbnail {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: var(--theme-color-component-1);
+    border: 1px solid var(--theme-color-component-3);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  // Element: image
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  // Element: placeholder
+  &__placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--theme-color-component-2);
+  }
+
+  // Element: icon
+  &__icon {
+    font-size: 48px;
+    color: var(--theme-color-weak-text);
+  }
+
+  // Element: overlay (play button overlay)
+  &__overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    border: 3px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+  }
+
+  // Element: play-icon
+  &__play-icon {
+    font-size: 36px;
+  }
+
+  // Element: badge (duration badge)
+  &__badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    background: rgba(0, 0, 0, 0.9);
+    color: #ffffff;
+  }
+
+  // Element: title-overlay
+  &__title-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem 1rem 1rem 1rem;
+    color: var(--theme-color-component-1);
+    text-align: left;
+    background: linear-gradient(
+      transparent,
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.9)
+    );
+  }
+
+  // Element: title
+  &__title {
+    margin: 0;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.3;
+    text-align: left;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8), 0 1px 3px rgba(0, 0, 0, 0.6);
+  }
+
+  // Modifiers (for future specific styles)
+  // &--video { /* Video specific styles */ }
+  // &--link { /* Link specific styles */ }
+
+  // Hover states
+  &:hover {
+    .card__image {
+      transform: scale(1.05);
+    }
+
+    .card__overlay {
+      background: rgba(0, 0, 0, 0.9);
+      transform: translate(-50%, -50%) scale(1.1);
+      border-color: #ffffff;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+    }
+  }
+}
+
+// ==========================================
+// UTILITY CLASSES
+// ==========================================
+
+.media-config-caption {
+  margin-top: 0.1rem;
+  font-size: 0.875rem;
+  color: var(--theme-color-contrast-text);
+  line-height: 1.5;
+  text-align: left;
+}

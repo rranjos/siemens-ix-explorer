@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importar estilos do Siemens IX */
+@import '@siemens/ix/dist/siemens-ix/siemens-ix.css';
+/* Importar tema específico do Siemens IX */
+@import '@siemens/ix/dist/siemens-ix/theme/classic-dark.css';

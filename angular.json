@@ -30,9 +30,21 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "node_modules/@siemens/ix/dist/siemens-ix",
+                "output": "assets/siemens-ix"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/@siemens/ix-icons/dist",
+                "output": "assets/ix-icons"
+              }
             ],
             "styles": [
+              "node_modules/@siemens/ix/dist/siemens-ix/siemens-ix.css",
+              "node_modules/@siemens/ix/dist/siemens-ix/theme/classic-dark.css",
               "src/styles.scss"
             ],
             "scripts": []

@@ -1,0 +1,82 @@
+<div class="card-list">
+  <div class="card-list__header">
+    <h2 class="card-list__title">{{ title() }}</h2>
+  </div>
+
+  <div class="card-list__carousel">
+    @if (shouldShowNavigation()) {
+    <button
+      class="card-list__nav card-list__nav--left"
+      (click)="scrollLeft()"
+      [disabled]="isAtStart()"
+      aria-label="Previous cards"
+    >
+      ‹
+    </button>
+
+    <button
+      class="card-list__nav card-list__nav--right"
+      (click)="scrollRight()"
+      [disabled]="isAtEnd()"
+      aria-label="Next cards"
+    >
+      ›
+    </button>
+    }
+
+    <div class="card-list__viewport" #viewport>
+      <div class="card-list__container" #container>
+        @for (card of cards(); track card.id) { 
+          @if (card.type === 'video') {
+            <ix-card class="card card--video" (click)="onCardClick(card)">
+              <div class="card__content">
+                <div class="card__thumbnail">
+                  @if (card.videoThumbnail) {
+                  <img
+                    [src]="card.videoThumbnail"
+                    [alt]="card.heading"
+                    class="card__image"
+                  />
+                  } @else {
+                  <div class="card__placeholder">
+                    <span class="card__icon">▶</span>
+                  </div>
+                  }
+                  <div class="card__overlay">
+                    <span class="card__play-icon">▶</span>
+                  </div>
+                  @if (card.duration) {
+                  <div class="card__badge">{{ card.duration }}</div>
+                  }
+                  <div class="card__title-overlay">
+                    <h3 class="card__title">
+                      {{ card.heading}}
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            </ix-card>
+          } 
+          @if (card.type === 'link' || card.type === 'download') {
+            <ix-card class="card card--link" (click)="onCardClick(card)">
+              <div class="card__content">
+                <div class="card__thumbnail">
+                  <img
+                    [src]="card.linkThumbnail"
+                    [alt]="card.heading"
+                    class="card__image"
+                  />
+                  <div class="card__title-overlay">
+                    <h3 class="card__title">
+                      {{ card.heading }}
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            </ix-card>
+          } 
+        }
+      </div>
+    </div>
+  </div>
+</div>

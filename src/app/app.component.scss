@@ -1,0 +1,24 @@
+/* App component styles */
+:host {
+  display: block;
+  height: 100vh;
+}
+
+ix-application {
+  height: 100vh;
+}
+
+// Customizar o menu para ocupar menos espaço
+ix-menu {
+  --ix-menu-width: 48px; // Largura reduzida para apenas ícones
+  
+  &[expand="true"] {
+    --ix-menu-width: 200px; // Largura quando expandido
+  }
+}
+
+// Garantir que o conteúdo principal use todo o espaço disponível
+ix-content {
+  flex: 1;
+  overflow: hidden;
+}
