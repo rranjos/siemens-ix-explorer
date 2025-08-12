@@ -1,8 +1,36 @@
 <ix-application>
   <ix-menu [expand]="isMenuExpanded" [pinned]="isMenuPinned">
     <ix-menu-item [routerLink]="['/card-list']">
-      <ix-icon name="apps" slot="icon"></ix-icon>
+      <ix-icon name="application-screens" slot="icon"></ix-icon>
       Card List
+    </ix-menu-item>
+    <ix-menu-item [routerLink]="['/right-pane']">
+      <ix-icon name="folder" slot="icon"></ix-icon>
+      Right Pane
+    </ix-menu-item>
+    <ix-menu-item [routerLink]="['/breadcrumb']">
+      <ix-icon name="arrow-right" slot="icon"></ix-icon>
+      Breadcrumb
+    </ix-menu-item>
+    <ix-menu-item [routerLink]="['/tabs']">
+      <ix-icon name="bookmark" slot="icon"></ix-icon>
+      Tabs
+    </ix-menu-item>
+    <ix-menu-item [routerLink]="['/tree']">
+      <ix-icon name="hierarchy" slot="icon"></ix-icon>
+      Tree
+    </ix-menu-item>
+    <ix-menu-item [routerLink]="['/workflow']">
+      <ix-icon name="cog" slot="icon"></ix-icon>
+      Workflow
+    </ix-menu-item>
+    <ix-menu-item [routerLink]="['/date-picker']">
+      <ix-icon name="calendar" slot="icon"></ix-icon>
+      Date Picker
+    </ix-menu-item>
+    <ix-menu-item [routerLink]="['/date-dropdown']">
+      <ix-icon name="clock" slot="icon"></ix-icon>
+      Date Dropdown
     </ix-menu-item>
   </ix-menu>
   

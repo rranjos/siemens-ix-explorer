@@ -3,7 +3,7 @@ import { provideRouter } from '@angular/router';
 import { provideAnimations } from '@angular/platform-browser/animations';
 
 import { routes } from './app.routes';
-import { IxModule } from '@siemens/ix-angular';
+import { IxIcon, IxModule } from '@siemens/ix-angular';
 
 export const appConfig: ApplicationConfig = {
   providers: [
