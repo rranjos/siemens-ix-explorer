@@ -1,4 +1,4 @@
-# 🎨 SiemenThis project was created to demonstrate the practical implementation of ## 🛠️ Technologies Used
+# 🎨 This project was created to demonstrate the practical implementation of Card List Navigators  🛠️ Technologies Used
 
 ### Core
 
